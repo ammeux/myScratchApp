@@ -15,7 +15,7 @@ namespace myScratchApp
         private Button playButton;
         private Button stopButton;
         private Button pauseButton;
-
+        private Button killButton;
 
         public Form1()
         {
@@ -23,6 +23,7 @@ namespace myScratchApp
             playButton = new Button();
             stopButton = new Button();
             pauseButton = new Button();
+            killButton = new Button();
 
             playButton.Location = new Point(24, 24);
             playButton.Size = new Size(200, 24);
@@ -39,9 +40,15 @@ namespace myScratchApp
             pauseButton.Text = "Pause";
             pauseButton.Click += new EventHandler(playButton_Click);
 
+            killButton.Location = new Point(850, 24);
+            killButton.Size = new Size(200, 24);
+            killButton.Text = "Kill";
+            killButton.Click += new EventHandler(playButton_Click);
+
             Controls.Add(playButton);
             Controls.Add(stopButton);
             Controls.Add(pauseButton);
+            Controls.Add(killButton);
         }
 
         public void playButton_Click(object sender, EventArgs e)
